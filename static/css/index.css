@@ -157,7 +157,7 @@ body {
 }
 
 /* for recon list */
-li { 
+li {
   cursor: pointer;
 }
 
@@ -233,4 +233,12 @@ li {
   width: 220px;
   margin-left: 8px;
   margin-right: 8px;
+}
+.math {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+.math sub {
+  vertical-align: sub;
+  font-size: 0.7em;
 }

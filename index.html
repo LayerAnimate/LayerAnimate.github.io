@@ -103,7 +103,7 @@
               </span> -->
 
               <span class="link-block">
-                <a href="https://arxiv.org/abs/"
+                <a href="https://arxiv.org/abs/2501.08295"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -114,7 +114,7 @@
 
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com"
+                <a href="https://github.com/IamCreateAI/LayerAnimate"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -153,7 +153,7 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3" style="margin-top: -30px">Abstract</h2>
+        <h2 class="title is-3" style="margin-top: -20px">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Animation separates foreground and background elements into layers, with distinct processes for sketching, refining, coloring, and in-betweening.
@@ -185,131 +185,200 @@
 
 
 
-<!--
+
 <section class="section">
   <div class="container is-max-desktop">
-
-
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3" style="margin-top: -20px">Motivation</h2>
+        <h2 class="title is-3" style="margin-top: -20px" id="layer_curation">Layer Curation</h2>
 
-        <img src="./resources/teaser.png" class="center">
+        <img src="./resources/layer_curation.png" class="center">
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-            XXX
+            <strong>Left: Layer Curation Pipeline.</strong>
+            The bottom <span style="color: rgb(249, 169, 104)">orange</span> dashed box illustrates the curated layer masks with their motion scores.
+            Motion scores remain temporally constant throughout the animation.
+            <strong>Right: Motion-state Hierarchical Merging.</strong>
+            Layers are merged from the bottom up until the layer count <span class="math">L</span> falls below the maximum layer capacity <span class="math">N</span> and the motion score difference <span class="math">d<sub>s</sub></span> exceeds the threshold <span class="math">&eta;<sub>s</sub></span>.
           </p>
         </div>
 
       </div>
     </div>
-
-
   </div>
-</section> -->
+</section>
 
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <br>
-    <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Reconstructions on Mip-NeRF 360 Dataset</h2>
-    <div class="container">
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px" id="architecture">Architecture</h2>
+        <img src="./resources/architecture.png" class="center">
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            <strong>Overview of LayerAnimate</strong>.
+            Given reference images, layer masks, and their motion information, LayerAnimate enables animation generation with precise layer-specific control.
+            Besides the motion scores, LayerAnimate supports alternative motion information, such as sketches.
+          </p>
+        </div>
 
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-treehill">
-          <video poster="" id="treehill" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_treehill.mp4"
-                    type="video/mp4">
-          </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px" id="comparison">Comparison</h2>
+        <div style="display: flex;">
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="video1" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/comparison_1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="video2" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/comparison_2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
         </div>
-        <div class="item item-flowers">
-          <video poster="" id="flowers" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_flowers.mp4"
-                    type="video/mp4">
-          </video>
+        <div style="display: flex;">
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="video3" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/comparison_3.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="video4" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/comparison_4.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
         </div>
-        <div class="item item-stump">
-          <video poster="" id="stump" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_stump.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-garden">
-          <video poster="" id="garden" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_garden.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-bicycle">
-          <video poster="" id="bicycle" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_bicycle.mp4"
-                    type="video/mp4">
-          </video>
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            <strong>Qualitative comparison with other competitors</strong>.
+            We select four clips to exemplify the representative characteristics of animation:
+            &#x2460 particle effects,
+            &#x2461 light effects,
+            &#x2462 smoke appearing from nowhere,
+            &#x2463 unconventional fade-in visual style.
+          </p>
         </div>
       </div>
     </div>
   </div>
-</section> -->
-<!--
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Reconstructions on the Tanks and Temples Dataset</h2>
-    <div class="container">
+</section>
 
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-caterpillar">
-          <video poster="" id="caterpillar" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_Caterpillar.mp4"
-                    type="video/mp4">
-          </video>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px" id="application">Layer-specific Application</h2>
+        <div style="display: flex;">
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="app_video1" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/application_1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="app_video2" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/application_2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
         </div>
-        <div class="item item-barn">
-          <video poster="" id="barn" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_Barn.mp4"
-                    type="video/mp4">
-          </video>
+        <div style="display: flex;">
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="app_video3" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/application_3.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="app_video4" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/application_4.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
         </div>
-        <div class="item item-ignatius">
-          <video poster="" id="ignatius" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_Ignatius.mp4"
-                    type="video/mp4">
-          </video>
+        <div style="display: flex;">
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="app_video5" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/application_5.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="app_video6" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/application_6.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
         </div>
-        <div class="item item-playground">
-          <video poster="" id="playground" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_Playground.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-train">
-          <video poster="" id="train" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_Train.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-truck">
-          <video poster="" id="truck" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_Truck.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-panther">
-          <video poster="" id="panther" autoplay controls muted loop playsinline height="100%">
-            <source src="./resources/ours_merge_Panther.mp4"
-                    type="video/mp4">
-          </video>
+        <div class="content has-text-justified">
+          <p style="margin-top: 30px">
+            <strong>Layer-specific Application</strong>.
+            LayerAnimate provides innovative and user-friendly control options for animation, enabling users to freeze specific elements, animate characters with partial sketches, and switch static or dynamic backgrounds.
+            The layer-specific control over individual layers ensures that foreground layers remain consistent and nearly unaffected by background changes.
+          </p>
         </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
-<!-- <section class="section" id="BibTeX">
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" style="margin-top: -20px" id="results">More Examples</h2>
+        <div style="display: flex;">
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="example1" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/results_1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="example2" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/results_2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div style="display: flex;">
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="example3" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/results_3.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-centered" style="width: 48%;">
+            <video poster="" id="example4" loop playsinline autoplay muted controls height="100%">
+              <source src="./resources/results_4.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{fan2024trim,
+    <pre><code>@article{yang2025layeranimate,
   author    = {Yang, Yuxue and Fan, Lue and Lin, Zuzeng and Wang, Feng and Zhang, Zhaoxiang},
   title     = {LayerAnimate: Layer-specific Control for Animation},
-  journal   = {arXiv preprint arXiv:},
+  journal   = {arXiv preprint arXiv:2501.08295},
   year      = {2025},
 }</code></pre>
   </div>
@@ -318,9 +387,11 @@
 <section class="section" id="Acknowledgements">
   <div class="container is-max-desktop content">
     <h2 class="title">Acknowledgements</h2>
-    We sincerely thank the great work
+    We sincerely thank the great work <a href="https://doubiiu.github.io/projects/ToonCrafter/">ToonCrafter</a>,
+    <a href="https://luckyhzt.github.io/lvcd">LVCD</a>,
+    and <a href="https://yihao-meng.github.io/AniDoc_demo/"">AniDoc</a> for their inspiring work and contributions to the animation community.
   </div>
-</section> -->
+</section>
 
 <footer class="footer">
   <div class="container">

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="LayerAnimate: Layer-specific Control for Animation">
-  <meta name="keywords" content="LayerAnimate: Layer-specific Control for Animation">
+        content="LayerAnimate: Layer-level Control for Animation">
+  <meta name="keywords" content="LayerAnimate: Layer-level Control for Animation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="p4VwBvjFoutSaEbNpvHG_KLmWBbudEz9xAu_iqX238k" />
 
@@ -64,10 +64,10 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <!-- <h1 class="title is-2 publication-title">LayerAnimate: Layer-specific Control for Animation</h1> -->
+          <!-- <h1 class="title is-2 publication-title">LayerAnimate: Layer-level Control for Animation</h1> -->
           <h1 class="title is-1 publication-title" style="margin-bottom: 0"><strong>LayerAnimate</strong></h1>
           <br>
-          <h2 class="title is-2 publication-title" style="margin-top: 0; margin-bottom: 0">Layer-specific Control for Animation</h2>
+          <h2 class="title is-2 publication-title" style="margin-top: 0; margin-bottom: 0">Layer-level Control for Animation</h2>
           <br>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -91,16 +91,6 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="TBD"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span> -->
 
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2501.08295"
@@ -123,6 +113,35 @@
                   </a>
               </span>
 
+              <span class="link-block">
+                <a href="https://www.bilibili.com/video/BV1EycqeaEqF/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <img style="max-width: 80%;" src="static/bilibili-brands.svg" alt="BiliBili">
+                  </span>
+                  <span>BiliBili</span>
+                  </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://youtu.be/b_bvVKigky4"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>YouTube</span>
+                  </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/IamCreateAI/LayerAnimate"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <img style="max-width: 100%;" src="static/huggingface_logo.svg" alt="Huggingface Demo">
+                  </span>
+                  <span>Huggingface Demo</span>
+                  </a>
+              </span>
             </div>
 
           </div>
@@ -140,7 +159,7 @@
               <span class="link-block">
                 <a href="#application"
                    class="external-link button is-normal is-rounded">
-                  <span>Layer-specific Application</span>
+                  <span>Composite Control</span>
                 </a>
               </span>
 
@@ -158,7 +177,7 @@
     </div>
   </div>
 </section>
-
+<!--
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -174,6 +193,21 @@
       </div>
     </div>
   </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p style="margin-top: -40px">
+            We update LayerAnimate and support trajectory control for a flexible composition of various layer-level controls. The video on BiliBili and YouTube illustrates our original framework, which will be updated soon.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section">
@@ -184,12 +218,13 @@
         <h2 class="title is-3" style="margin-top: -20px">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Animation separates foreground and background elements into layers, with distinct processes for sketching, refining, coloring, and in-betweening.
-            Existing video generation methods typically treat animation as a monolithic data domain, lacking fine-grained control over individual layers.
-            In this paper, we introduce LayerAnimate, a novel architectural approach that enhances fine-grained control over individual animation layers within a video diffusion model, allowing users to independently manipulate foreground and background elements in distinct layers.
-            To address the challenge of limited layer-specific data, we propose a data curation pipeline that features automated element segmentation, motion-state hierarchical merging, and motion coherence refinement.
-            Through quantitative and qualitative comparisons, and user study, we demonstrate that LayerAnimate outperforms current methods in terms of animation quality, control precision, and usability, making it an ideal tool for both professional animators and amateur enthusiasts.
-            This framework opens up new possibilities for layer-specific animation applications and creative flexibility.
+            Traditional animation production decomposes visual elements into discrete layers to enable independent processing for sketching, refining, coloring, and in-betweening.
+            Existing anime generation video methods typically treat animation as a distinct data domain different from real-world videos, lacking fine-grained control at the layer level.
+            To bridge this gap, we introduce LayerAnimate, a novel video diffusion framework with layer-aware architecture that empowers the manipulation of layers through layer-level controls.
+            The development of a layer-aware framework faces a significant data scarcity challenge due to the commercial sensitivity of professional animation assets.
+            To address the limitation, we propose a data curation pipeline featuring Automated Element Segmentation and Motion-based Hierarchical Merging.
+            Through quantitative and qualitative comparisons, and user study, we demonstrate that LayerAnimate outperforms current methods in terms of animation quality, control precision, and usability, making it an effective tool for both professional animators and amateur enthusiasts.
+            This framework opens up new possibilities for layer-level animation applications and creative flexibility.
           </p>
         </div>
       </div>
@@ -223,11 +258,10 @@
         <img src="./resources/layer_curation.png" class="center">
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-            <strong>Left: Layer Curation Pipeline.</strong>
-            The bottom <span style="color: rgb(249, 169, 104)">orange</span> dashed box illustrates the curated layer masks with their motion scores.
-            Motion scores remain temporally constant throughout the animation.
-            <strong>Right: Motion-state Hierarchical Merging.</strong>
-            Layers are merged from the bottom up until the layer count <span class="math">L</span> falls below the maximum layer capacity <span class="math">N</span> and the motion score difference <span class="math">d<sub>s</sub></span> exceeds the threshold <span class="math">&eta;<sub>s</sub></span>.
+            <strong>Layer Curation Pipeline.</strong>
+            The bottom <span style="color: rgb(249, 169, 104)">orange</span> dashed box illustrates curated layer masks with different motion scores, where motion scores remain temporally constant throughout the animation clip.
+            <span style="color: rgb(245, 194, 66)">Yellow</span> dashed boxes denote new elements absent in the first frame, demonstrating our pipeline's capability to segment dynamically appearing elements.
+            We transparently present some frames of masklets to highlight the new elements in Key Frame <span class="math">K<sub>i</sub></span>.
           </p>
         </div>
 
@@ -245,8 +279,9 @@
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
             <strong>Overview of LayerAnimate</strong>.
-            Given reference images, layer masks, and their motion information, LayerAnimate enables animation generation with precise layer-specific control.
-            Besides the motion scores, LayerAnimate supports alternative motion information, such as sketches.
+            LayerAnimate establishes a layer-level control architecture for animation generation.
+            It enables the flexible composition of control signals at the layer level, allowing for injecting distinct conditions (e.g., motion scores, trajectories, and sketches) for different layers.
+            For simplicity, the text and image injection branches are omitted from the core architecture schematic.
           </p>
         </div>
 
@@ -260,7 +295,7 @@
     <div class="columns is-centered has-text-centered" id="comparison">
       <div class="column is-four-fifths">
         <h2 class="title is-3" style="margin-top: -20px">Comparison</h2>
-          <video poster="" id="video1" loop playsinline autoplay muted controls height="100%">
+          <!-- <video poster="" id="video1" loop playsinline autoplay muted controls height="100%">
             <source src="./resources/comparison_1.mp4"
                     type="video/mp4">
           </video>
@@ -275,15 +310,17 @@
           <video poster="" id="video4" loop playsinline autoplay muted controls height="100%">
             <source src="./resources/comparison_4.mp4"
                     type="video/mp4">
+          </video> -->
+          <video poster="" id="comparison" loop playsinline autoplay muted controls height="100%">
+            <source src="./resources/Qualitative_Comparison.mp4"
+                    type="video/mp4">
           </video>
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-            <strong>Qualitative comparison with other competitors</strong>.
-            We select four clips to exemplify the representative characteristics of animation:
-            &#x2460 particle effects,
-            &#x2461 light effects,
-            &#x2462 smoke appearing from nowhere,
-            &#x2463 unconventional fade-in visual style.
+            <strong>Qualitative comparison with other competitors.</strong>
+            We select several clips to exemplify the representative characteristics of animation, including particle effects in Image-to-Video,
+            a knife appearing off-screen in Image-to-Video with Sketch,
+            and an unconventional fade-in visual style in Interpolation with Sketch.
           </p>
         </div>
       </div>
@@ -295,8 +332,8 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered" id="application">
       <div class="column is-four-fifths">
-        <h2 class="title is-3" style="margin-top: -20px">Layer-specific Application</h2>
-          <video poster="" id="app_video1" loop playsinline autoplay muted controls height="100%">
+        <h2 class="title is-3" style="margin-top: -20px">Composite Control</h2>
+          <!-- <video poster="" id="app_video1" loop playsinline autoplay muted controls height="100%">
             <source src="./resources/application_1.mp4"
                     type="video/mp4">
           </video>
@@ -319,12 +356,15 @@
           <video poster="" id="app_video6" loop playsinline autoplay muted controls height="100%">
             <source src="./resources/application_6.mp4"
                     type="video/mp4">
+          </video> -->
+          <video poster="" id="multi_control" loop playsinline autoplay muted controls height="100%">
+            <source src="./resources/Multi_Layer_level_Control.mp4"
+                    type="video/mp4">
           </video>
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-            <strong>Layer-specific Application</strong>.
-            LayerAnimate provides innovative and user-friendly control options for animation, enabling users to freeze specific elements, animate characters with partial sketches, and switch static or dynamic backgrounds.
-            The layer-specific control over individual layers ensures that foreground layers remain consistent and nearly unaffected by background changes.
+            <strong>Composite Control</strong>.
+            LayerAnimate provides multiple user-friendly control options at the layer level, leading to a composite control manner.
           </p>
         </div>
       </div>
@@ -337,7 +377,7 @@
     <div class="columns is-centered has-text-centered" id="more_examples">
       <div class="column is-four-fifths">
         <h2 class="title is-3" style="margin-top: -20px">More Examples</h2>
-          <video poster="" id="example1" loop playsinline autoplay muted controls height="100%">
+          <!-- <video poster="" id="example1" loop playsinline autoplay muted controls height="100%">
             <source src="./resources/results_1.mp4"
                     type="video/mp4">
           </video>
@@ -352,6 +392,10 @@
           <video poster="" id="example4" loop playsinline autoplay muted controls height="100%">
             <source src="./resources/results_4.mp4"
                     type="video/mp4">
+          </video> -->
+          <video poster="" id="more_example" loop playsinline autoplay muted controls height="100%">
+            <source src="./resources/More_Examples.mp4"
+                    type="video/mp4">
           </video>
         </div>
       </div>
@@ -364,7 +408,7 @@
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{yang2025layeranimate,
   author    = {Yang, Yuxue and Fan, Lue and Lin, Zuzeng and Wang, Feng and Zhang, Zhaoxiang},
-  title     = {LayerAnimate: Layer-specific Control for Animation},
+  title     = {LayerAnimate: Layer-level Control for Animation},
   journal   = {arXiv preprint arXiv:2501.08295},
   year      = {2025},
 }</code></pre>

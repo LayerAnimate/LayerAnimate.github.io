@@ -170,6 +170,13 @@
                 </a>
               </span>
 
+              <span class="link-block">
+                <a href="#real_world"
+                   class="external-link button is-normal is-rounded">
+                  <span>Real-World Domain</span>
+                </a>
+              </span>
+
             </div>
           </div>
         </div>
@@ -199,12 +206,30 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <div class="content has-text-justified">
-          <p style="margin-top: -40px">
-            We update LayerAnimate and support trajectory control for a flexible composition of various layer-level controls. The video on BiliBili and YouTube illustrates our original framework, which will be updated soon.
-          </p>
-        </div>
 
+        <h2 class="title is-3">News</h2>
+        <div class="news-list has-text-left">
+
+          <div class="columns news-item">
+            <div class="column is-narrow has-text-weight-bold">
+              <span>2025-05-15</span>
+            </div>
+            <div class="column">
+              <p>We have extended LayerAnimate to the DiT (Wan2.1 1.3B) variant, enabling the generation of 81 frames at 480 × 832 resolution. It performs surprisingly well in the <a href="#real_world">Real-World Domain</a>.</p>
+            </div>
+          </div>
+
+
+          <div class="columns news-item">
+            <div class="column is-narrow has-text-weight-bold">
+              <span>2025-03-31</span>
+            </div>
+            <div class="column">
+              <p>We update LayerAnimate and support trajectory control for a flexible composition of various layer-level controls. The video on BiliBili and YouTube illustrates our original framework, which will be updated soon.</p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -403,6 +428,59 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered" id="real_world">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3" style="margin-top: -20px">Real-World Domain</h2>
+
+        <!-- 2×2 Grid -->
+        <div class="columns is-multiline">
+
+          <!-- Top Left: Layer Mask -->
+          <div class="column is-half">
+            <figure class="image">
+              <img src="./resources/real_world_layer.png" alt="Layer Masks">
+            </figure>
+          </div>
+
+          <!-- Top Right: Sketch Video -->
+          <div class="column is-half">
+            <video loop playsinline autoplay muted controls style="width: 100%;">
+              <source src="./resources/real_world_sketch.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-center" style="margin-top: 0.5rem;">
+              Sketch control for the <span style="color: #72baff;">man</span> layer.
+            </p>
+          </div>
+
+          <!-- Bottom Left: Full Video + Caption -->
+          <div class="column is-half">
+            <video loop playsinline autoplay muted controls style="width: 100%;">
+              <source src="./resources/real_world.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-center" style="margin-top: 0.5rem;">
+              Trajectory control for the <span style="color: #5cc16f;">dog</span> and <span style="color: #f66b70;">background</span>.
+            </p>
+          </div>
+
+          <!-- Bottom Right: Full Video + Caption -->
+          <div class="column is-half">
+            <video loop playsinline autoplay muted controls style="width: 100%;">
+              <source src="./resources/real_world_static.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-center" style="margin-top: 0.5rem;">
+              Move the <span style="color: #5cc16f;">dog</span> with the static <span style="color: #f66b70;">background</span>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -420,7 +498,7 @@
     <h2 class="title">Acknowledgements</h2>
     We sincerely thank the great work <a href="https://doubiiu.github.io/projects/ToonCrafter/">ToonCrafter</a>,
     <a href="https://luckyhzt.github.io/lvcd">LVCD</a>,
-    and <a href="https://yihao-meng.github.io/AniDoc_demo/"">AniDoc</a> for their inspiring work and contributions to the animation community.
+    <a href="https://yihao-meng.github.io/AniDoc_demo/">AniDoc</a> and <a href="https://github.com/Wan-Video/Wan2.1">Wan-Video</a> for their inspiring work and contributions to the AIGC community.
   </div>
 </section>
 
